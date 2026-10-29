@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,9 +15,6 @@
         android:theme="@style/Theme.AfyaMsaada">
 
         <activity
-            android:name=".LearnActivity" />
-
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
@@ -25,6 +24,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".LearnActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ResourceDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".LearnActivity" />
+
+        <activity
+            android:name=".SelfCheckActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".HelpDirectoryActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".FacilityDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".HelpDirectoryActivity" />
+
+        <activity
+            android:name=".HelplineActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <provider
+            android:name=".provider.AfyaMsaadaProvider"
+            android:authorities="ke.afyamsaada.provider"
+            android:exported="true" />
 
     </application>
 
